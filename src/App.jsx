@@ -1,8 +1,11 @@
+import Start from "./pages/Start"
+
 function App() {
 
   return (
-    <>
-    </>
+    <div>
+      <Start/>
+    </div>
   )
 }
 
