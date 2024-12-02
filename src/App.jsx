@@ -3,7 +3,7 @@
 import Routes from './router';
 
 
-function App(){
+const App = () => {
   return (
     <>
       <Routes />
