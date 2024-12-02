@@ -1,6 +1,6 @@
 import { useRoutes } from 'react-router-dom';
 
-import Start from '../pages/Start/indes';
+import Start from '../pages/Start';
 
 export default function Router() {
   return useRoutes([
@@ -8,7 +8,6 @@ export default function Router() {
       path: '/',
       children: [
         { index: true, element: <Start /> },
-        // { path: '/splash', element: <Splash /> },
       ]
     }
     // { path: '*', element: <NotFound /> }
