@@ -1,14 +1,14 @@
-import Header from "./components/Header"
-import Start from "./pages/Start"
+// import { useEffect } from 'react';
+// import { useNavigate, useLocation } from 'react-router-dom';
+import Routes from './router';
 
-function App() {
 
+function App(){
   return (
-    <div>
-      <Header />
-      <Start/>
-    </div>
-  )
-}
+    <>
+      <Routes />
+    </>
+  );
+};
 
-export default App
+export default App;
