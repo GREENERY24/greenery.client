@@ -11,8 +11,7 @@ export default function Start(){
 			<Header
         onClick={() => {
           navigate('/');
-        }}			
-			/>
+        }}/>
 			<_.StartInfo>
 				<_.StartIn>
 					<_.StartText>

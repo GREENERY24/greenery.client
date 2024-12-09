@@ -1,7 +1,9 @@
 import * as _ from './style';
-function Header(){
+function Header( {onClick} ){
   return(
-    <_.HeaderDiv>
+    <_.HeaderDiv
+      onClick={onClick}
+    >
       <_.HeaderTitle>그리너리</_.HeaderTitle>
     </_.HeaderDiv>
   );
