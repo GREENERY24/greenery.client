@@ -1,14 +1,13 @@
 import { Component } from 'react';
 import axios from 'axios';
 
-class Weather extends  Component {
+import Pot from '../../assets/Pot.svg';
+class Weather extends Component {
   // 상태 변수 정의
-  constructor(props) {
+  constructor(props){
     super(props);
     this.state = {
       temp: 0,
-      temp_max: 0,
-      temp_min: 0,
       humidity: 0,
       desc: '',
       icon: '',
@@ -29,8 +28,6 @@ class Weather extends  Component {
       const data = responseData.data;
       this.setState({
         temp: data.main.temp,
-        temp_max: data.main.temp_max,
-        temp_min: data.main.temp_min,
         humidity: data.main.humidity,
         desc: data.weather[0].description,
         icon: data.weather[0].icon,
@@ -46,30 +43,18 @@ class Weather extends  Component {
       return <p>Loading</p>;
     } else {
       return (
-        <div style={{ padding: '20px' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-            <div>
-              <h1 style={{ fontSize: '48px', margin: 0 }}>
-                {(this.state.temp - 273.15).toFixed(0)}°
-              </h1>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ marginBottom: '10px' }}>
-                <img src={imgSrc} alt="Weather icon" style={{ width: '50px' }} />
-              </div>
-              <p style={{ margin: 0, fontSize: '16px' }}>{this.state.desc}</p>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '10px', display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}>
-            <p style={{ margin: 0 }}>
-              최고: {(this.state.temp_max - 273.15).toFixed(0)}° 최저: {(this.state.temp_min - 273.15).toFixed(0)}°
-            </p>
-            <p style={{ display: 'flex', alignItems: 'center', margin: 0 }}>
-              {/* <SlDrop size="17px" style={{ marginTop: '7px', marginRight: '8px' }} /> */}
-              {this.state.humidity}%
-            </p>
-          </div>
+        <div>
+						<div>
+							<img src={imgSrc} alt="Weather icon" style={{ width: '10rem' }} />
+							<img src={Pot} alt="" />
+						</div>
+						<div>
+							<div>
+								<div>온도 : {(this.state.temp - 273.15).toFixed(0)}°</div>
+								<div>습도 : {this.state.humidity}%</div>
+							</div>
+							<div>부르기</div>
+						</div>
         </div>
       );
     }
