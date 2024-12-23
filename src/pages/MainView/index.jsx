@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import Weather from '../../components/Weather'; 
 import Header from "../../components/Header";
 import Pot from '../../assets/Pot.svg';
 //날씨 사진
@@ -15,6 +16,7 @@ export default function MainView(){
           navigate('/main');
         }}
 			/>
+			<Weather/>
 			<div>
 				<div>
 					<img src={Sun} alt="" />
